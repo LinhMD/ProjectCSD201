@@ -42,6 +42,12 @@ public class Student implements Comparable<Student>{
 		this.setMark(newMark);
 	}
 
+	public static Student getInstance(String code){
+		String name = InputValidation.getString("Input new Student Name", "Name can not be empty");
+		int mark = InputValidation.getAnInteger("Input Student mart", "mark invalid", 0, Integer.MAX_VALUE);
+		return new Student(code, name, mark);
+	}
+
 	@Override
 	public int compareTo(Student o) {
 		return this.getCode().compareTo(o.getCode());
@@ -49,10 +55,6 @@ public class Student implements Comparable<Student>{
 
 	@Override
 	public String toString() {
-		return "Student{" +
-				"code='" + code + '\'' +
-				", name='" + name + '\'' +
-				", mark=" + mark +
-				'}';
+		return code +"," + name + "," + mark;
 	}
 }
