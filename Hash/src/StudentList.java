@@ -21,7 +21,6 @@ public class StudentList extends HashMap<String, Student> {
 				String[] split = line.split("[,]");
 				Student student = new Student(split[0], split[1], Integer.parseInt(split[2]));
 				this.put(student.code, student);
-
 			}
 			stream.close();
 			reader.close();
@@ -32,7 +31,7 @@ public class StudentList extends HashMap<String, Student> {
 		}
 		return false;
 	}
-
+	@SuppressWarnings("nah")
 	public boolean saveToFile(String fileName){
 		try {
 			FileOutputStream stream = new FileOutputStream(fileName);
@@ -69,7 +68,7 @@ public class StudentList extends HashMap<String, Student> {
 
 	public void addNewStudent(){
 		Student student = Student.getInstance(getNewCode());
-		this.put(student.code, student);
+		this.put(student.getCode(), student);
 		System.out.println("add new " + student.getName() + " student successfully");
 	}
 
@@ -121,14 +120,15 @@ public class StudentList extends HashMap<String, Student> {
 		menu.add("print list of student");
 		menu.add("save to file");
 		menu.add("exit");
+
 		do{
 			switch (menu.getUserChoice()){
 				case 1: studentList.addNewStudent(); break;
-				case 2: studentList.search(); break;
+				case 2: studentList.searchStudent(); break;
 				case 3: studentList.deleteStudent(); break;
 				case 4: studentList.updateStudent(); break;
 				case 5: studentList.print(); break;
-				case 6: studentList.saveToFile(fileName);
+				case 6: studentList.saveToFile(fileName); break;
 				case 7: System.exit(0);
 			}
 		}while (true);
