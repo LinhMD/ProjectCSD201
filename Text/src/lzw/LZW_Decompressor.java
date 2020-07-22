@@ -53,11 +53,11 @@ public class LZW_Decompressor {
 				"(in the case of 8 bits) and used those as the \"standard\" character set.\n" +
 				"It then reads data 8 bit at a time and encodes\n" +
 				"the data as the number that represents its index in the dictionary.\n" +
-				"Everytime it comes across a new sup string ";
+				"Everytime it comes across a new sup string";
 		System.out.println(src.length());
 		LZW_Compressor compressor = new LZW_Compressor();
 		compressor.zip(src);
-		System.out.println(compressor.zippedData +" " +compressor.zippedData.size() + "");
+		System.out.println(compressor.zippedData);
 		LZW_Decompressor decompressor = new LZW_Decompressor();
 		decompressor.unzip(compressor.zippedData);
 		System.out.println(decompressor.getUnzippedStr());
