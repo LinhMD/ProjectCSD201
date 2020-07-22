@@ -1,5 +1,7 @@
 import org.jetbrains.annotations.Contract;
 
+import java.util.Arrays;
+
 public class MyStrMatcher {
 	public static int indexOf_BF(String s, String pattern){
 		int lengthS = s.length();
@@ -45,6 +47,7 @@ public class MyStrMatcher {
 		}
 		return fail;
 	}
+
 	@Contract(pure = true)
 	public static int indexOf_KMP(char[] s, char[]p){
 		int lengthS = s.length;
@@ -59,5 +62,20 @@ public class MyStrMatcher {
 			k++;
 		}
 		return -1;
+	}
+
+	public static int indexOf_KMP(String s, String p){
+		return indexOf_KMP(s.toCharArray(), p.toCharArray());
+	}
+
+	public static void main(String[] args) {
+		String s1 = "nanh na nan nanana na bamana kanananaha kakaka";
+		String s2 = "bamana";
+		String s3 = "na";
+		System.out.println(indexOf_BF(s1, s2));
+		System.out.println(indexOf_BF(s1, s3));
+		System.out.println(lastIndexOf_BF(s1, s3));
+		System.out.println(Arrays.toString(computeFailKMP(s1.toCharArray())));
+		System.out.println(indexOf_KMP(s1, s2));
 	}
 }
