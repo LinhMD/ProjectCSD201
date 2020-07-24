@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class FreqCounter {
 	int numOfSymbols = 0;
-	Sym_Freq[] freqObjets;
+	Sym_Freq[] freqObjets = new Sym_Freq[256];
 
 	public FreqCounter(){
 		this.freqObjets = new Sym_Freq[256];

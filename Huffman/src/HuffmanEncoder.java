@@ -43,7 +43,7 @@ public class HuffmanEncoder {
             ByteArrayInputStream iStream = new ByteArrayInputStream(symbols);
             this.encoded(iStream);
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -92,7 +92,7 @@ public class HuffmanEncoder {
             }
             return true;
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
             return false;
         }
     }
@@ -174,4 +174,33 @@ public class HuffmanEncoder {
         this.source = source;
     }
 
+    public static void main(String[] args) {
+        String src = "We're no strangers to love\n" +
+                "You know the rules and so do I\n" +
+                "A full commitment's what I'm thinking of\n" +
+                "You wouldn't get this from any other guy\n" +
+                "I just wanna tell you how I'm feeling\n" +
+                "Gotta make you understand\n" +
+                "Never gonna give you up\n" +
+                "Never gonna let you down\n" +
+                "Never gonna run around and desert you\n" +
+                "Never gonna make you cry\n" +
+                "Never gonna say goodbye\n" +
+                "Never gonna tell a lie and hurt you\n" +
+                "We've known each other for so long\n" +
+                "Your heart's been aching but you're too shy to say it\n" +
+                "Inside we both know what's been going on\n" +
+                "We know the game and we're gonna play it\n" +
+                "And if you ask me how I'm feeling\n" +
+                "Don't tell me you're too blind to see";
+        HuffmanEncoder encoder = new HuffmanEncoder(src);
+        System.out.println(encoder.getCodeTable());
+        System.out.println(encoder.getEncodeStr());
+        HuffmanZipResult rick_roll = encoder.creZipResult("Rick roll");
+        HuffmanDecoder decoder = new HuffmanDecoder(rick_roll);
+        decoder.decode();
+        String srcString = decoder.getSrcString();
+        System.out.println(srcString);
+
+    }
 }

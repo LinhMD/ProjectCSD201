@@ -21,14 +21,14 @@ public class CodewordGenerator {
     
     private  void generateCodewords(TreeNode p, String codeInited){
         if(p != null){
-            int L = codeInited.length();
+            if(p.left == null && p.right == null){
+                int symbol = p.symbol;
+                codeTable.get(symbol).codeword = codeInited;
+            }
+            generateCodewords(p.left, codeInited + "0");
+            generateCodewords(p.right, codeInited + "1");
         }
-        if(p.left == null && p.right == null){
-            int symbol = p.symbol;
-            codeTable.get(symbol).codeword = codeInited;
-        }
-        generateCodewords(p.left, codeInited + "0");
-        generateCodewords(p.right, codeInited + "1"); 
+
     }
     public void generateCodewords(){
         generateCodewords(tree.root, "");
