@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BackTracking/BackTracking.iml" filepath="$PROJECT_DIR$/BackTracking/BackTracking.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hash/Hash.iml" filepath="$PROJECT_DIR$/Hash/Hash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Huffman/Huffman.iml" filepath="$PROJECT_DIR$/Huffman/Huffman.iml" />
       <module fileurl="file://$PROJECT_DIR$/LinkedListImp/LinkedListImp.iml" filepath="$PROJECT_DIR$/LinkedListImp/LinkedListImp.iml" />
       <module fileurl="file://$PROJECT_DIR$/BackTracking/MyBackTracking/MyBackTracking.iml" filepath="$PROJECT_DIR$/BackTracking/MyBackTracking/MyBackTracking.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Project.iml" filepath="$PROJECT_DIR$/.idea/Project.iml" />

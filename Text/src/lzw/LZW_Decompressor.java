@@ -1,5 +1,7 @@
 package lzw;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -32,14 +34,13 @@ public class LZW_Decompressor {
 		output(entry);
 		int i = 1;
 		while (i < zippedCodes.size()){
-			curCode = zippedCodes.get(i);
+			curCode = zippedCodes.get(i++);
 			curTranslation = dict.get(curCode);
 			entry = curTranslation;
 			output(entry);
 			ch = entry.charAt(0);
 			putToDict(prevTranslation + ch);
 			prevTranslation = curTranslation;
-			i++;
 		}
 		unzipped = true;
 	}
