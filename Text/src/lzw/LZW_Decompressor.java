@@ -1,7 +1,5 @@
 package lzw;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -29,7 +27,7 @@ public class LZW_Decompressor {
 		char ch;
 		String entry;
 		prevCode = zippedCodes.get(0);
-		String curTranslation,prevTranslation = dict.get(prevCode);
+		String curTranslation, prevTranslation = dict.get(prevCode);
 		entry = prevTranslation;
 		output(entry);
 		int i = 1;
@@ -50,11 +48,24 @@ public class LZW_Decompressor {
 	}
 
 	public static void main(String[] args) {
-		String src = "lZW starts out with a dictionary of 256 character\n" +
-				"(in the case of 8 bits) and used those as the \"standard\" character set.\n" +
-				"It then reads data 8 bit at a time and encodes\n" +
-				"the data as the number that represents its index in the dictionary.\n" +
-				"Everytime it comes across a new sup string";
+		String src = "We're no strangers to love\n" +
+				"You know the rules and so do I\n" +
+				"A full commitment's what I'm thinking of\n" +
+				"You wouldn't get this from any other guy\n" +
+				"I just wanna tell you how I'm feeling\n" +
+				"Gotta make you understand\n" +
+				"Never gonna give you up\n" +
+				"Never gonna let you down\n" +
+				"Never gonna run around and desert you\n" +
+				"Never gonna make you cry\n" +
+				"Never gonna say goodbye\n" +
+				"Never gonna tell a lie and hurt you\n" +
+				"We've known each other for so long\n" +
+				"Your heart's been aching but you're too shy to say it\n" +
+				"Inside we both know what's been going on\n" +
+				"We know the game and we're gonna play it\n" +
+				"And if you ask me how I'm feeling\n" +
+				"Don't tell me you're too blind to see";
 		System.out.println(src.length());
 		LZW_Compressor compressor = new LZW_Compressor();
 		compressor.zip(src);

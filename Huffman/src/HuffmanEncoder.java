@@ -201,6 +201,5 @@ public class HuffmanEncoder {
         decoder.decode();
         String srcString = decoder.getSrcString();
         System.out.println(srcString);
-
     }
 }

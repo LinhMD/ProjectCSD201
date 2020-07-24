@@ -29,7 +29,6 @@ public class LZW_Compressor {
 	}
 
 	public void zip(String src){
-		int newCode = 256;
 		Integer code;
 		String subString = "";
 		String newSubString;
@@ -51,6 +50,8 @@ public class LZW_Compressor {
 		code = dict.get(subString);
 		output(code);
 		zipped = true;
+		System.out.println(dict.keySet().size());
+
 	}
 
 	public Hashtable<String, Integer> getDict() {
